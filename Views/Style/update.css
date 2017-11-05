@@ -1,0 +1,30 @@
+.content {
+	width: 600px; margin:0px auto; padding: 100px;
+}
+.labelUpdate {
+	text-align:center; 
+	font-size:25px; 
+	color: white; 
+	background-color: #767E78
+}
+.rowLabel {
+	text-align: center;
+	color: #000CFF;
+	font-size: 20px;
+	font-weight: bold;
+	width: 120px;
+	height: 30px;
+}
+.rowWrite {
+	width: 455px;
+	height: 28px;
+	font-size: 20px;
+	padding: 2px 5px;
+}
+#update {
+	width: 100px;
+	height: 28px;
+	color: red;
+	font-size: 20px;
+	font-weight: bold;
+}

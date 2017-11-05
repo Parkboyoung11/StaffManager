@@ -1,0 +1,207 @@
+@charset "UTF-8"; 
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;}
+img{vertical-align:bottom;}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section{display:block;}
+nav ul, ul, ol{list-style:none;}
+blockquote, q{quotes:none;}
+blockquote:before, blockquote:after, q:before, q:after{content:'';content:none;}
+* html .clearfix{height:1px;}
+ins{background-color:#ff9;color:#000;text-decoration:none;}
+mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold;}
+del{text-decoration:line-through;}
+abbr[title], dfn[title]{border-bottom:1px dotted inherit;cursor:help;}
+table{border-collapse:collapse;border-spacing:0;}
+
+button, fieldset, form, input, label, legend, select, textarea{margin:0;padding:0;vertical-align:baseline;}
+
+a{color:#009aff;text-decoration:none;}
+a:link{color:#009aff;text-decoration:none;}
+a:visited{text-decoration:none;}
+a:hover{color:#40b3ff;}
+a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent;line-height:1;}
+table{font-size:inherit;font:100%;}
+
+html{
+	font-size: 100%;
+}
+body{
+	color:#333;
+	font:12px "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
+	min-width:1010px;
+	line-height:1;
+	background: #DCDCDC;
+}
+
+/* ++ Ngoài cùng*/
+header {
+	background-color:#fff;
+    border-top: 0 solid #ff0000;
+    padding: 12px 0px 6px;
+    position: fixed;
+    z-index: 700;
+    width: 100%;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 0px 0px;
+    min-width: 1280px;
+    border-bottom: 3px solid #9D9D9D;
+    -webkit-transition: all 0.3s ease;
+}
+header.fixed {
+    padding: 6px 0px 6px;
+}
+
+/* ++ Trong*/
+.inner{
+    width: 1280px;
+    height: 69px;
+    margin:0 auto;
+    text-align: center;
+}
+.clearfix {
+	min-height:1px;
+}
+.clearfix:after{content:".";display:block;clear:both;height:0;visibility:hidden;}
+
+h1 {
+	font-weight:normal;
+	font-size:500%;
+}
+
+/* Main Of Body */
+/*--------------------------------------------------------------------------*/
+
+ /*WRAP part -- best above*/
+#wrap {
+	padding:93px 0 0 0;
+	height:auto;
+}
+
+ /*CONTENT part -- 2nd above*/
+#contents{
+	position:relative;
+	width:1280px;
+	margin:0 auto;
+	float:none;
+	background:#fff;
+	border-radius: 8px;
+}
+
+
+ /*main CONTENT part -- 3rd above*/
+#mainContent {
+    float: left;
+	width: 100%;
+}
+ /*CSS for Detail manga*/
+.divide-UIType-2colum{
+	padding:0 15px 20px 20px;
+}
+.divide-UIType-2colum .divideLeft{
+    width: 638px;
+    padding: 20px 20px 0px 0;
+	float: left;
+	margin-left: 60px;
+}
+.divide-UIType-2colum .divideRight{
+	width: 450px;
+	float: left;
+	padding: 20px 0 0 20px;
+	/*background: url('http://cdn.comic-walker.com/pc/img/bg_devide_shadow.jpg') 0 0 no-repeat;*/
+}
+#detailInfoBox {
+	display:table;
+	width:100%;
+}
+#detailInfoBox .bookTitle{
+	font-size: 28px;
+	font-weight: bold;
+	border-bottom: 2px dotted #ccc;
+	margin:0 0 5px 0;
+	line-height: 1.4;
+	color: red;
+}
+#detailInfoInner{
+	position: relative;
+}
+#detailInfoBox .detail_img{
+	float:left;
+	width:300px;
+	margin:0 20px 0 0;
+}
+#detailInfoBox .detail_img img{
+	max-width:300px;
+}
+#detailInfoBox .detail_info{
+	float: left;
+	width: 450px;
+}
+
+/*detail_infor have 2 part */
+/*table mangaInformation*/
+table.mangaInformation tr {
+	vertical-align: top;
+}
+
+table.mangaInformation th {
+	display: block;
+    color: #272727;
+    font-weight: 700;
+    text-align: right;
+    padding: 8px 20px;
+    font-size: 18px;
+}
+
+table.mangaInformation td {
+	padding: 8px 20px 8px 0;
+	font-size: 18px;
+	line-height: 150%;
+}
+
+/*ul 2: settingBtnBox */
+#detailInfoBox .settingBtnBox {
+	margin-bottom: 10px;
+	margin-top: 15px;
+}
+#detailInfoBox .settingBtnBoxLeft{
+	width: 200px;
+    /*padding: 20px 20px 0px 0;*/
+	float: left;
+	margin-left: 20px;
+}
+#detailInfoBox .settingBtnBoxRight, #detailInfoBox .settingBtnBoxMid{
+	width: 200px;
+    /*padding: 20px 20px 0px 0;*/
+	float: left;
+	margin-left: 0px;
+}
+#detailInfoBox .settingBtnBox div{
+	border: 5px solid #eee;
+	width: 200px;
+}
+#detailInfoBox .settingBtnBox div a {
+	display: block;
+	padding: 12px 10px 12px 10px;
+	border: 1px solid #539AB9;
+	text-align: left;
+	font-weight: bold;
+	color: #fff;
+	font-size: 18px;
+}
+#detailInfoBox .settingBtnBoxMid a {
+	background: linear-gradient(to bottom,  #ff8300 0%,#ce6a00 100%);
+}
+#detailInfoBox .settingBtnBoxLeft a {
+	background: linear-gradient(to bottom,  #ff0000 0%,#cc0000 100%);
+}
+#detailInfoBox .settingBtnBoxRight a {
+	background: linear-gradient(to bottom,  #0015ff 0%,#0015ff 100%);
+}
+i.arrowRight-w{
+	width: 12px ;
+	height: 17px;
+	margin: 0 0 0 0;
+	display: inline-block;
+	float: right;
+    background-image:url('https://i.imgur.com/gFsxJAF.png');
+    background-repeat: no-repeat;
+    background-position: right 0;
+}
