@@ -1,4 +1,4 @@
-<?php
+<?php  
   $sql_lietkesp="select * from Department";
   $row_lietkesp=mysqli_query($database, $sql_lietkesp);
 ?>
@@ -12,6 +12,7 @@
     <td style="text-align: center;">Description</td>
     <td style="text-align: center;">Created</td>
     <td style="text-align: center;">Updated</td>
+    <td style="text-align: center;">Status</td>
     <td colspan="2" style="text-align: center;">Edit</td>
   </tr>
   <?php
@@ -24,6 +25,13 @@
         <td><?php echo $dong['description']; ?></td>
         <td><?php echo $dong['created']; ?></td>
         <td><?php echo $dong['updated']; ?></td>
+        <td><?php
+          if (!$dong['isDelete']) {
+                echo "Normal";
+              }else {
+                echo "Deleted";
+              }
+        ?></td>
         <td><a href="index.php?quanly=department&ac=sua&id=<?php echo $dong['departID'] ?>" ><center><img src="../imgs/edit.png" width="30" height="30" /></center></a></td>
         <td><a href="modules/Department/xuly.php?id=<?php echo $dong['departID']?>" class="delete_link"><center><img src="../imgs/delete.png" width="30" height="30"   /></center></a></td>
       </tr>

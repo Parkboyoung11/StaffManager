@@ -37,7 +37,7 @@
           <td><?php echo $dong['name'] ?></td>
           <td>
             <?php 
-              if (!$dong['isManager']) {
+              if (!$dong['isManager']) { 
                 echo "Staff";
               }else {
                 echo "Manager";

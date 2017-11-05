@@ -13,10 +13,6 @@
       <td width="140"><input type="text" name="username" required="required" ></td>
     </tr>
     <tr>
-      <td width="97">Password</td>
-      <td width="140"><input type="password" name="password" required="required" ></td>
-    </tr>
-    <tr>
       <td width="97">Email</td>
       <td width="140"><input type="text" name="email" required="required" ></td>
     </tr>

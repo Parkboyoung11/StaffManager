@@ -22,7 +22,8 @@
 
 	if(isset($_POST['login'])){
 		$username = $_POST['username'];
-		$password = $_POST['password'];
+		$passwordRaw = $_POST['password'];
+		$password = sha1($passwordRaw);
 		$sql = "select * from Admin where username='$username' and password='$password' limit 1 ";
 		$row = mysqli_query($database, $sql);
 		$eachrow = mysqli_fetch_array($row);

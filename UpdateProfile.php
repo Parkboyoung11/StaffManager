@@ -19,7 +19,8 @@
 			$sqlUpdate = "update UsersDetail set FullName='$fullName', Birthday='$birthday', Address='$address', Avatar='$avatar', Gender='$gender' where udID='$_SESSION[userIDLogin]'";						
 			if(mysqli_query($database, $sqlUpdate)) {
 				if (isset($_POST['newpass'])) {
-					$sqlUpdateUser = "UPDATE Users set isFirstLogin='0', isResetFlag='0', password='$_POST[newpass]' where userID='$_SESSION[userIDLogin]'";
+					$passEncoded = md5($_POST['newpass']);
+					$sqlUpdateUser = "UPDATE Users set isFirstLogin='0', isResetFlag='0', password='$passEncoded' where userID='$_SESSION[userIDLogin]'";
 				}else {
 					$sqlUpdateUser = "UPDATE Users set isFirstLogin='0', isResetFlag='0' where userID='$_SESSION[userIDLogin]'";
 				}				

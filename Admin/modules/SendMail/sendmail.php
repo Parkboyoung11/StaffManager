@@ -1,7 +1,7 @@
 <?php
-	function SendMail($emailto){
-		$title = "Reset Password";
-		$content = "Admin have reset password. Your current password is 'boyoung'. Please sign in to change your password !";
+	function SendMail($emailto, $titleSend, $contentSend){
+		$title = $titleSend;
+		$content = $contentSend;
 		$mailto = $emailto;
 
 		require 'library/PHPMailerAutoload.php';
@@ -23,8 +23,10 @@
 		if(!$mail->send()) {
 			echo 'Message could not be sent.';
 			echo 'Mailer Error: ' . $mail->ErrorInfo;
+			return flase;
 		} else {
 			echo 'Message has been sent';
+			return true;
 		}
 	}	
 ?>

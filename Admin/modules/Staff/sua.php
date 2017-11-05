@@ -1,4 +1,4 @@
-<?php
+<?php 
   $sql = "select * from Users, Connector where userID=uID and userID='$_GET[uid]' and deID='$_GET[did]'";
   $row=mysqli_query($database, $sql);
   $dong=mysqli_fetch_array($row);

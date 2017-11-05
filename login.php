@@ -10,7 +10,8 @@
 	include('Helper/config.php');
 	if(isset($_POST['login'])){
 		$username = $_POST['username'];
-		$password = $_POST['password'];
+		$passwordraw = $_POST['password'];
+		$password = md5($passwordraw);
 		$sql = "select * from Users where username='$username' and password='$password'";
 		$result = mysqli_query($database, $sql);
 		$count = mysqli_num_rows($result);

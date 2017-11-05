@@ -1,5 +1,5 @@
 <?php
-	include('../../../Helper/config.php');
+	include('../../../Helper/config.php'); 
 
 	$userID=$_POST['userID'];
 	$username=$_POST['username'];
@@ -16,7 +16,7 @@
 	}else{
 		//xoa
 		// $sqlDelteUser = "delete from Users where userID = '$_GET[uid]'";
-		$sqlDelteUser = "UPDATE Users SET isDeteleFlag='1' where userID = '$_GET[uid]'";
+		$sqlDelteUser = "UPDATE Users SET isDeteleFlag='1', updated=CURDATE() where userID = '$_GET[uid]'";
 		mysqli_query($database, $sqlDelteUser);
 		header('location:../../index.php?quanly=staff&ac=lietke');		
 	}
