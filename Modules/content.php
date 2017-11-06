@@ -29,11 +29,12 @@
 						$isResetFlag = $row['isResetFlag'];
 
 						if($avata == NULL) {
-							echo "<div class=\"detail_img\"><img src=\"imgs/user.jpg\" width=\"600\" alt=\"Avatar Loading...\"></div>";
+							echo "<div class=\"detail_img\"><img src=\"imgs/user.jpg\" alt=\"Avatar Loading...\" style=\"max-width: 600px; max-height: 605px;\"></div>";
 						}else {
-							echo "<div class=\"detail_img\"><img src=\"".$avata."\" width=\"600\" alt=\"Avatar Loading...\"></div>";
+							echo "<div class=\"detail_img\"><img src=\"".$avata."\" alt=\"Avatar Loading...\" style=\"max-width: 600px; max-height: 605px;\"></div>";
 						}
 						?>
+						<img src="" >
 					</div>
 					<div class="divideRight">
 						<section id="detailInfoBox">
