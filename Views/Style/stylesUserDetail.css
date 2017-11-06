@@ -26,7 +26,7 @@ html{
 }
 body{
 	color:#333;
-	font:12px "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "Lucida Grande", "Lucida Sans Unicode", Arial, Verdana, sans-serif;
+	font:12px Arial, "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "Lucida Grande", "Lucida Sans Unicode",  Verdana, sans-serif;
 	min-width:1010px;
 	line-height:1;
 	background: #DCDCDC;
