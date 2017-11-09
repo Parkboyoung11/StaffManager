@@ -24,7 +24,7 @@
 		$username = $_POST['username'];
 		$passwordRaw = $_POST['password'];
 		$password = sha1($passwordRaw);
-		$sql = "select * from Admin where username='$username' and password='$password' limit 1 ";
+		$sql = "SELECT * from Admin where username='$username' and password='$password' limit 1 ";
 		$row = mysqli_query($database, $sql);
 		$eachrow = mysqli_fetch_array($row);
 		$count = mysqli_num_rows($row);
@@ -49,7 +49,7 @@
 				header('location:index.php');
 			}			
 		}else {
-			echo '<script>alert("Tài khoản hoặc mật khẩu không đúng.Làm ơn đăng nhập lại.");</script>';
+			echo '<script>alert("User or Password not correct. Try again.");</script>';
 			// header('location:login.php');
 		}
 	}

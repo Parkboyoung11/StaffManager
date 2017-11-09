@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html>
 	<head>
 		<title>Update Profile</title>
@@ -15,8 +15,6 @@
 			$birthday=$_POST['birthday'];
 			$address=$_POST['address'];
 			$gender=$_POST['gender'];
-
-
 
 			$avatar = $_FILES['avatar']['name'];
 			$avatarTmp = $_FILES['avatar']['tmp_name'];
@@ -56,19 +54,19 @@
 					</tr>
 					<tr>
 						<td class="rowLabel">Full Name</td>
-						<td><input type="text" name="fullName" class="rowWrite" value="<?php echo $_GET['fullName'] ?>"></td>
+						<td><input type="text" pattern="[A-Za-z ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚÝàáâãèéêìíòóôõùúýĂăĐđĨĩŨũƠơƯưẠ-ỹ]{1,}" name="fullName" required="required" class="rowWrite" value="<?php echo $_GET['fullName'] ?>"></td>
 					</tr>
 					<tr>
 						<td class="rowLabel">Birthday</td>
-						<td><input type="date" name="birthday" class="rowWrite" value="<?php echo $_GET['birthday'] ?>"></td>
+						<td><input type="date" name="birthday" required="required" class="rowWrite" value="<?php echo $_GET['birthday'] ?>"></td>
 					</tr>
 					<tr>
 						<td class="rowLabel">Address</td>
-						<td><input type="text" name="address" class="rowWrite" value="<?php echo $_GET['address'] ?>"></td>
+						<td><input type="text" pattern="[A-Za-z .,-ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚÝàáâãèéêìíòóôõùúýĂăĐđĨĩŨũƠơƯưẠ-ỹ]{1,}" required="required" name="address" class="rowWrite" value="<?php echo $_GET['address'] ?>"></td>
 					</tr>
 					<tr>
 						<td class="rowLabel">Avatar</td>
-						<td><input type="file" name="avatar" class="rowWrite"></td>
+						<td><input type="file" name="avatar" required="required" class="rowWrite"></td>
 					</tr>
 					<tr>
 						<td class="rowLabel">Gender</td>						

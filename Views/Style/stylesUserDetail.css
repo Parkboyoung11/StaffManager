@@ -162,20 +162,27 @@ table.mangaInformation td {
 	margin-top: 15px;
 }
 #detailInfoBox .settingBtnBoxLeft{
-	width: 200px;
+	width: 140px;
     /*padding: 20px 20px 0px 0;*/
 	float: left;
 	margin-left: 20px;
 }
-#detailInfoBox .settingBtnBoxRight, #detailInfoBox .settingBtnBoxMid{
-	width: 200px;
+#detailInfoBox .settingBtnBoxRight {
+	width: 140px;
     /*padding: 20px 20px 0px 0;*/
 	float: left;
 	margin-left: 0px;
 }
+
+#detailInfoBox .settingBtnBoxMid {
+	width: 120px;
+    /*padding: 20px 20px 0px 0;*/
+	float: left;
+	margin-left: 0px;
+}
+
 #detailInfoBox .settingBtnBox div{
 	border: 5px solid #eee;
-	width: 200px;
 }
 #detailInfoBox .settingBtnBox div a {
 	display: block;
@@ -204,4 +211,44 @@ i.arrowRight-w{
     background-image:url('https://i.imgur.com/gFsxJAF.png');
     background-repeat: no-repeat;
     background-position: right 0;
+}
+
+.tableStaff {
+	border-collapse: collapse;
+    width: 90%;
+    margin: 20px auto;   
+    /*border: 1px solid #F00;*/
+}
+
+.mainTitle {
+	/*border: 1px solid #F00;*/
+	text-align: center;
+	color: #000;
+	
+    font-size: 50px;
+    padding: 0 0 20px 0;
+}
+
+.subTitle {
+	border: 1px solid #F00;
+	text-align: center;
+	color: blue;
+    font-size: 40px;
+    padding: 4px;
+    background-color: #DEDDDD;
+}
+
+.contentTable {
+	background-color: #FFA800;
+	border: 1px solid #F00;
+	color: #000;
+	text-align: center;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.page {
+	width: 90%;
+	font-size: 20px;
+	padding: 5px 60px;
 }

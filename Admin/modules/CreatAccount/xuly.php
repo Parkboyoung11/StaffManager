@@ -3,7 +3,7 @@
 
 	$userID = $_POST['userID'];
 	$username = $_POST['username'];
-	$rawpass = "boyoung";
+	$rawpass = mt_rand(100000, 999999);
 	$password = md5($rawpass);
 	$email = $_POST['email'];
 	$departmentID = $_POST['department'];

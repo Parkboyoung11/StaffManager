@@ -2,7 +2,7 @@
   if(isset($_GET['trang'])){
     $trang=$_GET['trang'];
   }else{
-    $trang='';
+    $trang=''; 
   }
 
   if($trang == '' || $trang == '1'){
@@ -11,31 +11,42 @@
     $trang1 = ($trang * 10) - 10;
   }
 
-  $sqlStaff = "select * from Users, Department, Connector where userID=uID and departID=deID order by userID asc limit $trang1,10 ";
+  $_SESSION['pagenumber'] = $trang;
+
+  if (isset($_GET['search'])) {
+    $sqlStaff = "SELECT * from Users, Department, Connector where userID=uID and departID=deID and (username like '%$_GET[search]%' or email = '$_GET[search]' or userID = '$_GET[search]') order by userID asc limit $trang1,10 ";
+  }else {
+    $sqlStaff = "SELECT * from Users, Department, Connector where userID=uID and departID=deID order by userID asc limit $trang1,10 ";
+  }
   $rowStaff = mysqli_query($database, $sqlStaff);
 ?>
-<div class="button_themsp">
-  <a href="index.php?quanly=staff&ac=them">Add Staff</a>
+<div class="searchAndAdd">
+  <div class="button_themsp">
+    <a href="index.php?quanly=staff&ac=them">+</a> 
+  </div>
+  <form name="searchForm" style="width: 35%; float: right; margin-right: 20px; " id="searchFormHeader" method="get" action="">
+      <input name="search" class="keywordBox" value="<?php echo $_GET['search'] ?>" type="text" placeholder="Search Staff ....">
+  </form>
 </div>
 <table width="100%" border="1">
   <tr>
-    <td style="text-align: center;">User ID</td>
-    <td style="text-align: center;">Username</td>
-    <td style="text-align: center;">Email</td>
-    <td style="text-align: center;">Department</td>
-    <td style="text-align: center;">Position</td>
-    <td style="text-align: center;">Status</td>
-    <td colspan="3" style="text-align: center;">Edit</td>
+    <td class="subTitle">ID</td>
+    <td class="subTitle">Username</td>
+    <td class="subTitle">Email</td>
+    <td class="subTitle">Department</td>
+    <td class="subTitle">Position</td>
+    <td class="subTitle">Status</td>
+    <td colspan="3" class="subTitle">Edit</td>
   </tr>
   <?php
     while($dong=mysqli_fetch_array($rowStaff)){
       ?>
         <tr>
-          <td><?php  echo $dong['userID']?></td>
-          <td><?php echo $dong['username']; ?></td>
-          <td><?php echo $dong['email']; ?></td>
-          <td><?php echo $dong['name'] ?></td>
-          <td>
+          <td class="contentTable"><?php  echo $dong['userID']?></td>
+          <td class="contentTable"><?php echo $dong['username']; ?></td>
+          <td class="contentTable"><?php echo $dong['email']; ?></td>
+          <td class="contentTable"><?php echo $dong['name'] ?></td>
+          <td class="contentTable">
             <?php 
               if (!$dong['isManager']) { 
                 echo "Staff";
@@ -44,7 +55,7 @@
               }
             ?>
           </td>
-          <td>
+          <td class="contentTable">
             <?php 
               if (!$dong['isDeteleFlag']) {
                 echo "Working";
@@ -62,9 +73,14 @@
   ?>
 </table>
 <div class="trang">
-  Trang :
+  Page :
   <?php
-    $sql_trang=mysqli_query($database, "select userID from Users");
+    if (isset($_GET['search'])) {
+      $sqlSearch = "SELECT userID from Users where username like '%$_GET[search]%' or email = '$_GET[search]' or userID = '$_GET[search]'";
+    }else {
+      $sqlSearch = "SELECT userID from Users";
+    }
+    $sql_trang=mysqli_query($database, $sqlSearch);
     $count_trang=mysqli_num_rows($sql_trang);
     $a = ceil($count_trang / 10);   // lam tron len 4.3->5
     for($b = 1 ; $b <= $a ; $b++){

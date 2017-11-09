@@ -16,7 +16,7 @@
 		$result = mysqli_query($database, $sql);
 		$count = mysqli_num_rows($result);
 		$row = mysqli_fetch_assoc($result);
-		if($count > 0 && !$row['isDeteleFlag']){		
+		if($count > 0 && !$row['isDeteleFlag']){				
 			$_SESSION['userIDLogin'] = $row['userID'];
 			if (!$row['isFirstLogin']) {
 				$sql = "SELECT FullName FROM UsersDetail WHERE udID='$row[userID]'";

@@ -2,6 +2,8 @@
   if(isset($_GET['logout']) && $_GET['logout'] == "true"){
     unset($_SESSION['userIDLogin']);
     unset($_SESSION['FullName']);
+    unset($_SESSION['isManager']);
+    unset($_SESSION['departID']);
     header('location:login.php');
   }
 ?>
@@ -94,7 +96,7 @@
 										echo "<tr>";
 										echo "<th>Department</th>";
 										echo "<td>";
-										$sqld = "SELECT isManager, name FROM Department, Connector WHERE deID=departID and uID='$_SESSION[userIDLogin]'";
+										$sqld = "SELECT isManager, name, deID FROM Department, Connector WHERE deID=departID and uID='$_SESSION[userIDLogin]'";
 										$resultd = mysqli_query($database, $sqld);
 										if (mysqli_num_rows($resultd) <= 0) {
 											echo "No Information";
@@ -123,9 +125,20 @@
 											echo "\">Edit Profile<i class=\"arrowRight-w\"></i><i class=\"myMagazineFlag_off\"></i></a>";
 											?>
 										</div>
+										<?php
+											$sqlManager = "SELECT * FROM Connector WHERE uID='$_SESSION[userIDLogin]' and isManager='1'";
+											$resultManager = mysqli_query($database, $sqlManager);
+											if (mysqli_num_rows($resultManager) > 0) {										
+												echo '<div class="settingBtnBoxRight">';
+												echo '<a title="See staff information" href="index.php?staffInfor=true">Department<i class="arrowRight-w"></i></a>';
+												echo '</div>';	
+												$_SESSION['isManager'] = true;
+												$_SESSION['departID'] = $rowd["deID"];
+											}																					
+										?>
 										<div class="settingBtnBoxMid">
 											<a title="Logout !" href="?logout=true">Logout<i class="arrowRight-w"></i></a>
-										</div>
+										</div>										
 									</div>
 								</div>
 							</div>

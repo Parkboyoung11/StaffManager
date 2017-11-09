@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> 
 <head>
 	<meta charset="UTF-8">
 	<title>Staff Manager</title>
@@ -17,13 +17,17 @@
 	<?php
 		include('Helper/config.php');
 		include('Modules/header.php');
-		include('Modules/content.php');
+		if (isset($_GET['staffInfor']) && $_GET['staffInfor'] == 'true' && isset($_SESSION['isManager'])) {
+			include('Modules/ShowStaffInformation.php');
+		}else {
+			include('Modules/content.php');
+		}		
 	?>
-	<!-- <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
-	<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
-	<script type="text/javascript" src="js/delete.js"></script>
-	<script type="text/javascript" src="js/tinymce/js/tinymce/jquery.tinymce.min.js"></script>
-	<script type="text/javascript" src="js/tinymce/js/tinymce/tinymce.min.js"></script>
-	<script>tinymce.init({ selector:'textarea' });</script> -->
+	<script type="text/javascript" src="Admin/js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="Admin/js/jquery-3.2.1.js"></script>
+	<script type="text/javascript" src="Admin/js/delete.js"></script>
+	<script type="text/javascript" src="Admin/js/tinymce/js/tinymce/jquery.tinymce.min.js"></script>
+	<script type="text/javascript" src="Admin/js/tinymce/js/tinymce/tinymce.min.js"></script>
+	<script>tinymce.init({ selector:'textarea' });</script>
 </body>
 </html>

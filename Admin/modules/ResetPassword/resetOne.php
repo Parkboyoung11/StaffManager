@@ -7,7 +7,7 @@
 	}
 
 	include('../../../Helper/config.php');
-	$rawpass = "boyoung";
+	$rawpass = mt_rand(100000, 999999);
 	$defaultPass = md5($rawpass);
 	if (isset($_GET['uid'])) {
 		$sqlresetpass = "UPDATE Users set password='$defaultPass', isResetFlag='1' where userID='$_GET[uid]'";
@@ -24,6 +24,6 @@
 		while($row=mysqli_fetch_array($result)){
 			SendMail($row['email'], $titleSend, $contentSend);
 		}
-		header('location: ../../index.php');
+		header("location: ../../index.php?quanly=staff&ac=lietke&trang=$_SESSION[pagenumber]");
 	}
 ?>
